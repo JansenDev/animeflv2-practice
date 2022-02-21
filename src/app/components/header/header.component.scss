@@ -1,0 +1,131 @@
+header {
+  width: 100%;
+  position: fixed; //!
+  margin: 0 auto;
+  background-color: rgba(35, 38, 40, 0.952);
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+}
+// ^Nav. bar menu
+.container-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 1140px;
+  height: 76px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  &__logo {
+    margin: auto 0;
+    width: 142px;
+  }
+
+  .menu-web {
+    width: 100%;
+    height: 76px;
+
+    .menu-web__options {
+      display: flex;
+      flex-direction: row;
+      justify-content: end;
+      height: 76px;
+      margin: 0px;
+      padding: 0;
+
+      & div {
+        list-style: none;
+        margin: auto 5px;
+      }
+
+      & li {
+        list-style: none;
+        margin: auto 0;
+        padding: 20px;
+
+        & a {
+          text-decoration: none;
+          color: rgb(170, 170, 170);
+          font-weight: bold;
+          transition: color 0.3s;
+        }
+      }
+
+      & li a:hover {
+        color: rgb(255, 255, 255);
+      }
+    }
+
+    &__facebook a img {
+      border-radius: 50%;
+      width: 40px;
+    }
+
+    &__search {
+      width: 190px;
+      box-sizing: border-box;
+      display: inline-block;
+      // padding: 0;
+
+      form {
+        display: block;
+        position: relative;
+
+        input {
+          box-sizing: border-box;
+          width: 190px;
+          height: 100%;
+          padding: 5px 50px 5px 15px;
+          border: none;
+          height: 40px;
+          background-color: #1c1f20e8;
+          outline: none;
+          color: rgb(207, 207, 207);
+          border-radius: 50px;
+        }
+
+        input:focus {
+          background-color: #151717;
+        }
+
+        button {
+          position: absolute;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          width: 40px;
+          height: 40px;
+          border: none;
+          background-color: transparent;
+          color: rgb(255, 255, 255);
+          cursor: pointer;
+        }
+      }
+    }
+
+    &__login button {
+      height: 40px;
+      width: 90px;
+      box-sizing: border-box;
+      border: 0;
+      background-color: #1c1f20e8;
+      font-size: 12px;
+      font-family: 'Open Sans';
+      cursor: pointer;
+
+      fa-icon{
+        color: #e8e6e3;
+        margin-right: 5px;
+        font-weight: bold;
+        -webkit-text-stroke: 1px #e8e6e3;
+      }
+
+      span{
+        color: #e8e6e3;
+        margin-left: 5px;
+        -webkit-text-stroke: 1px #e8e6e3;
+      }
+    }
+  }
+}

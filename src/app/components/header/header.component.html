@@ -1,0 +1,40 @@
+<header>
+  <div class="container-nav">
+    <div class="container-nav__logo">
+      <a href="/"><img src="../../../assets/images/logo.webp" alt="logo" /></a>
+    </div>
+    <div class="menu-web">
+      <nav>
+        <ul class="menu-web__options">
+          <li><a href="/">INICIO</a></li>
+          <li><a href="/">RIKURA</a></li>
+          <li><a href="/">DIRECTORIO ANIME</a></li>
+
+          <div class="menu-web__search">
+            <form>
+              <input type="text" placeholder="Buscar..." name="buscar" autocomplete="off" />
+              <button type="submit">
+                <fa-icon [icon]="faSearch"></fa-icon>
+              </button>
+            </form>
+          </div>
+
+            <div class="menu-web__login">
+              <button type="button">
+                <fa-icon [icon]="faUser"></fa-icon> <span>LOGIN</span>
+              </button>
+            </div>
+
+          <div class="menu-web__facebook">
+            <a href="/">
+              <img
+                src="../../../assets/images/facebook.png"
+                alt="facebook-logo"
+              />
+            </a>
+          </div>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
