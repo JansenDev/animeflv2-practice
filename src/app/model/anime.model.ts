@@ -11,16 +11,17 @@ export interface Anime {
   cover_image: string;
   banner_image: string;
   genres: string[];
+  episodes_count: number;
 }
 
-export interface animeAPIResponse{
-  status_code:number,
-  message:string,
-  data:{
-    current_page:number,
-    count:number,
-    last_page:number,
-    documents:Anime[]
-  },
-  version:string,
+export interface animeAPIResponse {
+  status_code: number;
+  message: string;
+  data: {
+    current_page: number;
+    count: number;
+    last_page: number;
+    documents: Anime[];
+  };
+  version: string;
 }

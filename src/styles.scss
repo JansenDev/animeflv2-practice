@@ -1,7 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 body {
   padding: 0px;
   margin: 0px;
-  // font-family: 'Shizuru', cursive;
+}
+
+// badge
+.badge-type {
+  font-size: 10px !important;
+  padding: 1px 10px !important;
+  border-radius: 8px;
+  color: #e7e7e7;
+  position: absolute;
+  top: 14px;
+  right: 10px;
+
+  &.type-anime {
+    background-color: #0196c2;
+  }
+  &.type-movie {
+    background-color: #c20101;
+  }
+  &.type-ova {
+    background-color: #cc6500;
+  }
 }

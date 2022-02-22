@@ -1,17 +1,20 @@
-<div class="card">
-  <div class="card-title">
-    <h2>Title</h2>
-    <h3>{{ anime.titles["en"] }}</h3>
-    <p>Score: {{ anime.score }}</p>
-  </div>
-  <div class="card-body">
-    <img src="{{ anime.cover_image }}" alt="" />
-    <!-- <img width="300" src="{{ anime.banner_image }}" alt="" /> -->
-    <p>{{ anime.descriptions["en"] }}</p>
-    <p>Generos:</p>
-    <div *ngFor="let genero of anime.genres">
-      {{ genero }}
-    </div>
+<div class="shadow">
+  <div class="card">
+    <a href="#">
+      <div class="card-subtitle">
+        <span class="badge-type type-ova"
+          >Episodio {{ anime.episodes_count }}</span
+        >
+        <fa-icon [icon]="faPlayCircle"></fa-icon>
+      </div>
+      <div class="card-body">
+        <img src="{{ anime.cover_image }}" alt="" />
+      </div>
+      <div class="card-footer">
+        <div class="card-footer__title">
+          <div>{{ anime.titles["rj"] || anime.titles["en"] }}</div>
+        </div>
+      </div>
+    </a>
   </div>
 </div>
-<hr />

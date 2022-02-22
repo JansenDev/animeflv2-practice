@@ -1,5 +1,4 @@
 .container-aside {
-  margin: 90px 50px;
 
   & aside {
     width: 300px;
@@ -20,7 +19,7 @@
       margin: auto 0;
       padding-left: 10px;
       font-weight: bold;
-      font-size: 20px;
+      font-size: 15px;
     }
 
     &__icon {
@@ -40,22 +39,51 @@
 
     li {
       list-style: none;
-      height: 40px;
-      padding: 10px;
-      transition: color .3s;
+      box-sizing: border-box;
+      // ! Limita texto y poner puntos suspensivos segun el tamaño del div
+      text-overflow: ellipsis;
+      overflow: hidden;
+      position: relative;
+      a {
+        display: block;
+        width: 300px;
+        height: 40px;
+        box-sizing: border-box;
+        text-decoration: none;
+        color: #bfb9b1;
+        white-space: nowrap;
+        padding: 10px 70px 0 10px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
 
-      fa-icon {
+      a fa-icon {
         margin-right: 5px;
         color: #383838;
+        transition: color 0.2s;
       }
 
-      span {
+      a span {
         font-size: 15px;
+        transition: color 0.2s;
       }
     }
 
-    li:hover {
-      color: #22ccfe;
+    li:hover a {
+      & > fa-icon,
+      fa-icon + span {
+        color: #22ccfe;
+      }
+
+      & > .type-anime {
+        opacity: 1;
+      }
     }
+  }
+}
+
+.badge-type {
+  &.type-anime {
+    opacity: 0.5;
   }
 }

@@ -8,8 +8,11 @@
     </div>
     <ul class="aside-body">
       <li *ngFor="let anime of animeList">
-        <fa-icon [icon]="faPlayCircle"></fa-icon>
-        <span>{{ anime.titles["en"] || anime.titles["rj"] }}</span>
+        <a href="#">
+          <fa-icon [icon]="faPlayCircle"></fa-icon>
+          <span>{{ anime.titles["en"] || anime.titles["rj"] }}</span>
+          <span class="badge-type type-anime">ANIME</span>
+        </a>
       </li>
     </ul>
   </aside>
