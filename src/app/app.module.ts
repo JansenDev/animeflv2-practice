@@ -9,9 +9,12 @@ import { HeaderComponent } from './components/header/header.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { HttpClientModule } from '@angular/common/http';
+import { AnimeComponent } from './components/anime/anime.component';
+import { AsideComponent } from './components/aside/aside.component';
+import { AnimesComponent } from './components/animes/animes.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, HeaderComponent],
+  declarations: [AppComponent, HomeComponent, HeaderComponent, AnimeComponent, AsideComponent, AnimesComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

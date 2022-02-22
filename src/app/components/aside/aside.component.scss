@@ -1,0 +1,61 @@
+.container-aside {
+  margin: 90px 50px;
+
+  & aside {
+    width: 300px;
+    box-sizing: border-box;
+    background-color: #181a1b;
+    color: #bfb9b1;
+    font-family: "Open Sans", sans-serif;
+  }
+
+  & aside .aside-header {
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    border-bottom: 1px solid #363636;
+
+    & div:first-child {
+      width: 100%;
+      margin: auto 0;
+      padding-left: 10px;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    &__icon {
+      width: 25px !important ;
+      margin: auto;
+    }
+
+    & div fa-icon {
+      color: #ff8b1a;
+      font-size: 20px;
+    }
+  }
+
+  & aside .aside-body {
+    margin: 0;
+    padding: 0;
+
+    li {
+      list-style: none;
+      height: 40px;
+      padding: 10px;
+      transition: color .3s;
+
+      fa-icon {
+        margin-right: 5px;
+        color: #383838;
+      }
+
+      span {
+        font-size: 15px;
+      }
+    }
+
+    li:hover {
+      color: #22ccfe;
+    }
+  }
+}

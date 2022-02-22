@@ -1,0 +1,16 @@
+<div class="container-aside">
+  <aside>
+    <div class="aside-header">
+      <div>ANIMES EN EMISIÓN</div>
+      <div class="aside-header__icon">
+        <fa-icon [icon]="faPlay"></fa-icon>
+      </div>
+    </div>
+    <ul class="aside-body">
+      <li *ngFor="let anime of animeList">
+        <fa-icon [icon]="faPlayCircle"></fa-icon>
+        <span>{{ anime.titles["en"] || anime.titles["rj"] }}</span>
+      </li>
+    </ul>
+  </aside>
+</div>

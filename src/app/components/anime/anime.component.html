@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card-title">
+    <h2>Title</h2>
+    <h3>{{ anime.titles["en"] }}</h3>
+    <p>Score: {{ anime.score }}</p>
+  </div>
+  <div class="card-body">
+    <img src="{{ anime.cover_image }}" alt="" />
+    <!-- <img width="300" src="{{ anime.banner_image }}" alt="" /> -->
+    <p>{{ anime.descriptions["en"] }}</p>
+    <p>Generos:</p>
+    <div *ngFor="let genero of anime.genres">
+      {{ genero }}
+    </div>
+  </div>
+</div>
+<hr />
