@@ -6,9 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  ispageLoad: boolean = false;
+
   constructor() {}
 
-  ngOnInit(): void {
-    console.log('hellow');
+  ngOnInit(): void {}
+
+  animesLoaded(valor: boolean) {
+    this.ispageLoad = valor;
   }
 }

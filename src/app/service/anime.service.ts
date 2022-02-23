@@ -1,13 +1,18 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { animeAPIResponse } from '../model/anime.model';
-import { switchMap } from 'rxjs';
+import { BehaviorSubject, switchMap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
+
 export class AnimeService {
   constructor(private httpClient: HttpClient) {}
+
+  // @Output()
+  // loaded = new BehaviorSubject<boolean>(false);
+  // loaded$ = this.loaded.asObservable();
 
   getAnimesReleased() {
     const url = 'https://api.aniapi.com/v1/anime?status=1&year=2022';

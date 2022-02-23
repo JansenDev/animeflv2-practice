@@ -1,0 +1,28 @@
+$spinner-color-1: rgba(111, 202, 220, 0.75);
+$spinner-color-2: rgba(225, 20, 98, 0.75);
+$spinner-color-3: rgba(233, 169, 32, 0.75);
+
+.container {
+  // position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.flipspinner {
+  height: 100px;
+  width: 100px;
+  background-color: $spinner-color-1;
+  animation: flip 1s linear infinite;
+}
+
+@keyframes flip {
+  50% {
+    transform: rotateX(180deg);
+    background-color: $spinner-color-2;
+  }
+  100% {
+    transform: rotateX(180deg) rotateY(180deg);
+  }
+}

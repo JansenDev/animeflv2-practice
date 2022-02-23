@@ -1,11 +1,29 @@
 <app-header></app-header>
-<div class="container-home">
+
+<div
+  class="container-home"
+  [ngClass]="{
+    'show-home': ispageLoad
+  }"
+>
   <app-aside> </app-aside>
   <main>
     <div class="home-encabezado">
       <span class="home-title">Últimos episodios</span>
       <span class="badge-type type-anime">HOY</span>
     </div>
-    <app-animes></app-animes>
+
+    <app-animes (loaded)="animesLoaded($event)"></app-animes>
   </main>
+</div>
+
+<div
+  container-spinners
+  [ngClass]="{
+    'hide-spinner': ispageLoad
+  }"
+>
+  <app-spinner></app-spinner>
+  <app-spinner></app-spinner>
+  <app-spinner></app-spinner>
 </div>

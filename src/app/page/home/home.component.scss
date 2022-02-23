@@ -1,11 +1,21 @@
 $width_header: 1140px;
 
+.show-home{
+  opacity: 1 !important;
+}
+
+.hide-spinner{
+  display: none;
+}
+
 .container-home {
+  box-sizing: border-box;
   padding-top: 100px;
   margin: 0 auto;
   width: $width_header;
   display: flex;
   gap: 20px;
+  opacity: 0;
 
   & .home {
     &-encabezado {
@@ -25,7 +35,7 @@ $width_header: 1140px;
       }
 
       & .type-anime {
-        background-color: #01bcf3;
+        background-color: #0196C2;
       }
 
       & .badge-type::before {
@@ -39,13 +49,14 @@ $width_header: 1140px;
         height: 0;
         border-left: 5px solid transparent;
         border-right: 5px solid transparent;
-        border-top: 5px solid #01bcf3;
+        border-top: 5px solid #0196C2;
       }
     }
 
     &-title {
       font-size: 25px;
       font-family: "open sans";
+      color: #BFB9B1;
     }
   }
 }
