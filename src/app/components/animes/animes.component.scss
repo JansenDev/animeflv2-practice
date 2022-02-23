@@ -1,16 +1,17 @@
 .container-animes {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: auto;
   gap: 20px;
-  width: 840px;
+  width: 820px;
+  padding-top: 15px ;
 }
 
 @media screen and (max-width: 1200px) {
   .container-animes {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    grid-auto-rows: auto;
+    // grid-auto-rows: auto;
     width: 660px;
   }
 }

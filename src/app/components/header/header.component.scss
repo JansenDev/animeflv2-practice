@@ -1,3 +1,5 @@
+$width_header: 1140px;
+
 header {
   width: 100%;
   position: fixed; //!
@@ -10,14 +12,14 @@ header {
   left: 0;
   z-index: 99;
   // TODO: deprecated(?)
-  box-shadow: 0 1px 5px 0 rgb(35, 38, 40)
+  box-shadow: 0 1px 5px 0 rgb(35, 38, 40);
 }
 // ^Nav. bar menu
 .container-nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 1140px;
+  width: $width_header;
   height: 76px;
   margin: 0 auto;
   padding: 0 20px;
@@ -116,21 +118,27 @@ header {
       border: 0;
       background-color: #1c1f20e8;
       font-size: 12px;
-      font-family: 'Open Sans';
+      font-family: "Open Sans";
       cursor: pointer;
 
-      fa-icon{
+      fa-icon {
         color: #e8e6e3;
         margin-right: 5px;
         font-weight: bold;
         -webkit-text-stroke: 1px #e8e6e3;
       }
 
-      span{
+      span {
         color: #e8e6e3;
         margin-left: 5px;
         -webkit-text-stroke: 1px #e8e6e3;
       }
     }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .container-nav {
+    width: 660px !important;
   }
 }

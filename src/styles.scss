@@ -7,8 +7,8 @@ body {
 
 // badge
 .badge-type {
-  font-size: 10px !important;
-  padding: 1px 10px !important;
+  font-size: 10px;
+  padding: 1px 10px;
   border-radius: 8px;
   color: #e7e7e7;
   position: absolute;
@@ -18,10 +18,16 @@ body {
   &.type-anime {
     background-color: #0196c2;
   }
+
   &.type-movie {
     background-color: #c20101;
   }
+
   &.type-ova {
     background-color: #cc6500;
+  }
+
+  &.type-other {
+    background-color: #7a00cc;
   }
 }
