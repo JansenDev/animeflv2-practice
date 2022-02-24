@@ -3,7 +3,7 @@
 <div
   class="container-home"
   [ngClass]="{
-    'show-home': ispageLoad
+    show: ispageLoad
   }"
 >
   <app-aside> </app-aside>
@@ -16,9 +16,10 @@
     <app-animes (loaded)="animesLoaded($event)"></app-animes>
   </main>
 </div>
+<app-footer [ispageLoad]="ispageLoad" ></app-footer>
 
 <div
-  container-spinners
+  class="container-spinners"
   [ngClass]="{
     'hide-spinner': ispageLoad
   }"

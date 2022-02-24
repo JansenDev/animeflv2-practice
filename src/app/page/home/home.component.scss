@@ -1,21 +1,14 @@
 $width_header: 1140px;
 
-.show-home{
-  opacity: 1 !important;
-}
-
-.hide-spinner{
-  display: none;
-}
 
 .container-home {
+  display: none;
   box-sizing: border-box;
   padding-top: 100px;
   margin: 0 auto;
   width: $width_header;
-  display: flex;
+  display: none;
   gap: 20px;
-  opacity: 0;
 
   & .home {
     &-encabezado {
@@ -61,8 +54,12 @@ $width_header: 1140px;
   }
 }
 
+.container-spinners{
+  margin-top: 170px;
+}
+
 @media screen and (max-width: 1200px) {
   .container-home {
-    width: 640px;
+    width: 980px;
   }
 }

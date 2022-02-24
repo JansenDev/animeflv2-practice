@@ -15,15 +15,13 @@ export class AsideComponent implements OnInit {
     this.getAnimesReleased();
   }
   faPlayCircle = faPlayCircle;
-  faPlay= faPlay;
+  faPlay = faPlay;
 
   animeList: Anime[] = [] as Anime[];
 
   getAnimesReleased() {
     this.animeService.getAnimesReleased().subscribe((animesArray) => {
       this.animeList = animesArray;
-      console.log(animesArray);
-
     });
   }
 }

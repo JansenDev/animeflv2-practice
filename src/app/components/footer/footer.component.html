@@ -1,1 +1,29 @@
-<p>footer works!</p>
+<footer
+  class="footer-container"
+  [ngClass]="{
+    showb: ispageLoad
+  }"
+>
+  <div class="footer-body">
+    <div class="row1">
+      <div class="footer-body__text">
+        Anime Online Practice
+        <span>- Ningún video se encuentra alojado en nuestros servidores</span>
+      </div>
+      <nav class="footer-body__enlaces">
+        <a class="badge-type type-black" href="#">Términos y condiciones</a>
+        <a class="badge-type type-black" href="#">Política de Privacidad</a>
+        <a class="badge-type type-black" href="#">Sobre AnimeFLV Practice</a>
+      </nav>
+    </div>
+
+    <div class="footer-body__redes">
+      <a href="#"
+        ><img Class="icon" src="../../../assets/images/fb.png" alt=""
+      /></a>
+      <a href="#"
+        ><img class="icon" src="../../../assets/images/fb.png" alt=""
+      /></a>
+    </div>
+  </div>
+</footer>

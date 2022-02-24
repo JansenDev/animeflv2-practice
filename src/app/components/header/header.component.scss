@@ -13,6 +13,7 @@ header {
   z-index: 99;
   // TODO: deprecated(?)
   // box-shadow: 0 1px 5px 0 rgb(35, 38, 40);
+  padding: 0 20px;
 }
 // ^Nav. bar menu
 .container-nav {
@@ -22,7 +23,6 @@ header {
   width: $width_header;
   height: 76px;
   margin: 0 auto;
-  padding: 0 20px;
 
   &__logo {
     margin: auto 0;
@@ -36,7 +36,7 @@ header {
     .menu-web__options {
       display: flex;
       flex-direction: row;
-      justify-content: end;
+      justify-content: flex-end;
       height: 76px;
       margin: 0px;
       padding: 0;
@@ -139,6 +139,6 @@ header {
 
 @media screen and (max-width: 1200px) {
   .container-nav {
-    width: 660px !important;
+    width: 980px !important;
   }
 }
