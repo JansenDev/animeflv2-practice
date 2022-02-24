@@ -1,8 +1,9 @@
-import { Injectable, Output } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { animeAPIResponse } from '../model/anime.model';
+import { AnimeAPIResponse } from '../model/anime.model';
 import { BehaviorSubject, switchMap } from 'rxjs';
-import { map } from "rxjs/operators";
+import { map } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -11,17 +12,12 @@ export class AnimeService {
   constructor(private httpClient: HttpClient) {}
 
   getAnimesReleased() {
-    const url = 'https://api.aniapi.com/v1/anime?status=1&year=2022';
-    const TOKEN =
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwOTYiLCJuYmYiOjE2NDM4NDYzMzIsImV4cCI6MTY0NjQzODMzMiwiaWF0IjoxNjQzODQ2MzMyfQ.qLerlhY9TvmQSCt_YrX3_08FtwqKbeZM3VGcDXfTKeg';
+    const path = `/anime?status=1&year=2022`;
+    const url = environment.API_URI_BASE + path;
+    // ('https://api.aniapi.com/v1/anime?status=1&year=2022');
 
     return this.httpClient
-      .get<animeAPIResponse>(url, {
-        headers: {
-          Authorization: TOKEN,
-          'Content-Type': 'application/json',
-        },
-      })
+      .get<AnimeAPIResponse>(url)
       .pipe(map((apiResponse) => apiResponse.data.documents));
   }
 }

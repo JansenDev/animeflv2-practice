@@ -1,5 +1,4 @@
 .container-aside {
-
   & aside {
     width: 300px;
     box-sizing: border-box;
@@ -52,7 +51,7 @@
         text-decoration: none;
         color: #bfb9b1;
         white-space: nowrap;
-        padding: 10px 70px 0 10px;
+        padding: 10px 75px 0 10px;
         text-overflow: ellipsis;
         overflow: hidden;
       }
@@ -67,6 +66,11 @@
         font-size: 15px;
         transition: color 0.2s;
       }
+
+      a span.badge-type {
+        width: 35px;
+        text-align: center;
+      }
     }
 
     li:hover a {
@@ -78,6 +82,18 @@
       & > .type-anime {
         opacity: 1;
       }
+
+      & > .type-movie {
+        opacity: 1;
+      }
+
+      & > .type-ova {
+        opacity: 1;
+      }
+
+      & > .type-other {
+        opacity: 1;
+      }
     }
   }
 }
@@ -85,6 +101,15 @@
 .badge-type {
   font-size: 10px !important;
   &.type-anime {
+    opacity: 0.5;
+  }
+  &.type-movie {
+    opacity: 0.5;
+  }
+  &.type-ova {
+    opacity: 0.5;
+  }
+  &.type-other {
     opacity: 0.5;
   }
 }

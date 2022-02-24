@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
 
-  API_URI: 'https://api.aniapi.com/v1',
+  API_URI_BASE: 'https://api.aniapi.com/v1',
   TOKEN:
     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwOTYiLCJuYmYiOjE2NDQyNzI1MTEsImV4cCI6MTY0Njg2NDUxMSwiaWF0IjoxNjQ0MjcyNTExfQ.7ztHpOwTUyjowtP7RlcDtzLW9BmaSeMsnENhfN2Khfw',
 };

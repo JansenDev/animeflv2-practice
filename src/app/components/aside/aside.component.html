@@ -11,7 +11,19 @@
         <a href="#">
           <fa-icon [icon]="faPlayCircle"></fa-icon>
           <span>{{ anime.titles["en"] || anime.titles["rj"] }}</span>
-          <span class="badge-type type-anime">ANIME</span>
+          <span
+            class="badge-type"
+            [ngClass]="{
+              'type-anime':
+                format[anime.format] == 'ANIME' ||
+                format[anime.format] == 'ANIMETV',
+              'type-movie': format[anime.format] == 'MOVIE',
+              'type-ova':
+                format[anime.format] == 'OVA' || format[anime.format] == 'ONA'
+            }"
+          >
+            {{ format[anime.format] | outputName }}
+          </span>
         </a>
       </li>
     </ul>

@@ -1,4 +1,6 @@
-export interface Anime {
+import { Format } from './enum/format';
+
+interface Anime {
   id: number;
   titles: {
     [x: string]: string | null;
@@ -12,9 +14,10 @@ export interface Anime {
   banner_image: string;
   genres: string[];
   episodes_count: number;
+  format: Format;
 }
 
-export interface animeAPIResponse {
+interface AnimeAPIResponse {
   status_code: number;
   message: string;
   data: {
@@ -25,3 +28,5 @@ export interface animeAPIResponse {
   };
   version: string;
 }
+
+export { Anime, AnimeAPIResponse };

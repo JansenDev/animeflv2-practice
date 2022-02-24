@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { faPlay, faPlayCircle } from '@fortawesome/free-solid-svg-icons';
 import { Anime } from 'src/app/model/anime.model';
 import { AnimeService } from '../../service/anime.service';
+import { Format } from '../../model/enum/format';
 
 @Component({
   selector: 'app-aside',
@@ -18,6 +19,7 @@ export class AsideComponent implements OnInit {
   faPlay = faPlay;
 
   animeList: Anime[] = [] as Anime[];
+  format: any = Format;
 
   getAnimesReleased() {
     this.animeService.getAnimesReleased().subscribe((animesArray) => {

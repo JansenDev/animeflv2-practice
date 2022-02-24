@@ -8,22 +8,27 @@ import { HeaderComponent } from './components/header/header.component';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AnimeComponent } from './components/anime/anime.component';
 import { AsideComponent } from './components/aside/aside.component';
 import { AnimesComponent } from './components/animes/animes.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { OutputNamePipe } from './pipe/output-name.pipe';
+import { TokenInterceptor } from "./interceptor/token.interceptor";
+import { NotFoundComponent } from './page/not-found/not-found.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, HeaderComponent, AnimeComponent, AsideComponent, AnimesComponent, SpinnerComponent, FooterComponent],
+  declarations: [AppComponent, HomeComponent, HeaderComponent, AnimeComponent, AsideComponent, AnimesComponent, SpinnerComponent, FooterComponent, OutputNamePipe, NotFoundComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FontAwesomeModule,
   ],
-  providers: [],
+  providers: [{
+    provide:HTTP_INTERCEPTORS, useClass:TokenInterceptor, multi:true
+  }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
