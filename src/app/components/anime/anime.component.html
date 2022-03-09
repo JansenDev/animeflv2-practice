@@ -1,6 +1,6 @@
 <div class="shadow">
   <div class="card">
-    <a href="#">
+    <a routerLink="/ver/{{anime.id}}/{{anime.episodes_count}}">
       <div class="card-subtitle">
         <span class="badge-type type-ova"
           >Episodio {{ anime.episodes_count }}</span
@@ -14,7 +14,7 @@
 
       <div class="card-footer">
         <div class="card-footer__title">
-          <div>{{ anime.titles["rj"] || anime.titles["en"] }}</div>
+          <div>{{ anime.titles["en"] || anime.titles["rj"] }}</div>
         </div>
       </div>
     </a>

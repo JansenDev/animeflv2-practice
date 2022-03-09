@@ -17,9 +17,11 @@ import { FooterComponent } from './components/footer/footer.component';
 import { OutputNamePipe } from './pipe/output-name.pipe';
 import { TokenInterceptor } from "./interceptor/token.interceptor";
 import { NotFoundComponent } from './page/not-found/not-found.component';
+import { VerComponent } from './page/ver/ver.component';
+import { UrlSafePipe } from './pipe/url-safe.pipe';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, HeaderComponent, AnimeComponent, AsideComponent, AnimesComponent, SpinnerComponent, FooterComponent, OutputNamePipe, NotFoundComponent],
+  declarations: [AppComponent, HomeComponent, HeaderComponent, AnimeComponent, AsideComponent, AnimesComponent, SpinnerComponent, FooterComponent, OutputNamePipe, NotFoundComponent, VerComponent, UrlSafePipe],
   imports: [
     BrowserModule,
     AppRoutingModule,

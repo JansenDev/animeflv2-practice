@@ -23,7 +23,6 @@ export class TokenInterceptor implements HttpInterceptor {
   }
 
   private addAuthorization(request: HttpRequest<unknown>) {
-
     // TODO:localstorage token
     const token =
       environment.TOKEN ||

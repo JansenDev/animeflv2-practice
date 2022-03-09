@@ -1,0 +1,190 @@
+<div
+  class="loading-ver"
+  [ngClass]="{
+    showb: isLoaded
+  }"
+>
+  <div class="box-ver">
+    <div class="container-ver">
+      <nav class="ver__nav">
+        <fa-icon class="color-primary" [icon]="faHome"></fa-icon>
+        <a routerLink="/">Inicio</a>
+        <fa-icon class="color-orange" [icon]="faCaretRight"></fa-icon>
+        <!-- TODO: routerlink redirect to detail anime -->
+        <a routerLink="/">{{ currentAnime.titles["en"] }}</a>
+        {{ currentAnime.titles["en"] || currentAnime.titles["rj"] }}
+        <fa-icon class="color-orange" [icon]="faCaretRight"></fa-icon>
+        {{ currentAnime.titles["en"] || currentAnime.titles["rj"] }} EPISODIO
+        {{ episode }}
+      </nav>
+
+      <div class="ver__title">
+        <h1 class="title">
+          {{ currentAnime.titles["en"] || currentAnime.titles["rj"] }} episodio
+          {{ episode }}
+        </h1>
+        <h3 class="subtitle">Episodio {{ episode }}</h3>
+      </div>
+
+      <ul class="ver__nav-pills">
+        <li
+          [ngClass]="{
+            active: 'https://www.youtube.com/embed/3jdQVZk8RSU' == videoURL
+          }"
+        >
+          <a
+            (click)="
+              URLServerOpcion('https://www.youtube.com/embed/3jdQVZk8RSU')
+            "
+            >Opción 1</a
+          >
+        </li>
+        <li
+          [ngClass]="{
+            active: currentAnime.trailer_url == videoURL
+          }"
+        >
+          <a (click)="URLServerOpcion(currentAnime.trailer_url)">Opción 2</a>
+        </li>
+        <li
+          [ngClass]="{
+            active: '0' == videoURL
+          }"
+        >
+          <a (click)="URLServerOpcion('0')">Opción 3</a>
+        </li>
+        <li
+          [ngClass]="{
+            active: '1' == videoURL
+          }"
+        >
+          <a (click)="URLServerOpcion('1')">Opción 4</a>
+        </li>
+        <li
+          [ngClass]="{
+            active: '2' == videoURL
+          }"
+        >
+          <a (click)="URLServerOpcion('2')">Opción 5</a>
+        </li>
+        <li
+          [ngClass]="{
+            active: '3' == videoURL
+          }"
+        >
+          <a (click)="URLServerOpcion('3')">Opción 6</a>
+        </li>
+        <li
+          [ngClass]="{
+            active: '4' == videoURL
+          }"
+        >
+          <a (click)="URLServerOpcion('4')">Opción 7</a>
+        </li>
+        <li
+          [ngClass]="{
+            active: '5' == videoURL
+          }"
+        >
+          <a (click)="URLServerOpcion('5')">Opción 8</a>
+        </li>
+      </ul>
+
+      <iframe
+        class="ver__video"
+        [src]="videoURL | urlSafe"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+
+      <div class="box-controls">
+        <div class="ver__controls">
+          <ul class="ver__controls-caps">
+            <li>
+              <a href="#">
+                <fa-icon [icon]="faChevronLeft"></fa-icon
+                ><span>Anterior</span></a
+              >
+            </li>
+            <li>
+              <a href="#"> <fa-icon [icon]="faThList"></fa-icon> </a>
+            </li>
+            <li>
+              <a href="#"
+                ><span>Siguiente</span
+                ><fa-icon [icon]="faChevronRight"></fa-icon>
+              </a>
+            </li>
+          </ul>
+
+          <a href="#" class="ver__controls-btn-report">
+            <fa-icon class="btn-report-icon" [icon]="faFlag"></fa-icon>
+            <div class="btn-report-txt">
+              <span>reportar</span>
+              <span>episodio</span>
+            </div>
+          </a>
+
+          <div class="ver__eye">
+            <fa-icon [icon]="faEye"></fa-icon>
+          </div>
+
+          <div class="ver__lights">
+            <fa-icon [icon]="faLightbulb"></fa-icon>
+          </div>
+
+          <div class="ver__expand">
+            <fa-icon [icon]="faExpand"></fa-icon>
+          </div>
+        </div>
+
+        <a href="#" class="ver__download">
+          <fa-icon [icon]="faDownload"></fa-icon>
+
+          <div class="ver__download-text">
+            <span>Descargar</span>
+            <span>Episodio</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="container-news">
+      <h4 class="container-news__title">Noticias de Anime</h4>
+
+      <ul class="container-news__list">
+        <li  class="container-news__list-item"*ngFor="let anime of animeNews">
+          <a href="#">
+            <div class="news-header">
+              <img [src]="anime.cover_image" alt="" />
+              <div class="badge-date">25.06.1997</div>
+            </div>
+
+            <div class="news-body">
+              <span>{{ anime.titles["en"] || anime.titles["rj"] }}</span>
+              <span class="news-description">
+                Lorem ipsum dolor sit amet
+              </span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+
+  </div>
+</div>
+
+<!-- Loading -->
+<div
+  class="container-spinners"
+  [ngClass]="{
+    'hide-spinner': isLoaded
+  }"
+>
+  <app-spinner></app-spinner>
+  <app-spinner></app-spinner>
+  <app-spinner></app-spinner>
+</div>

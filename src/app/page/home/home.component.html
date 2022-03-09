@@ -1,22 +1,22 @@
-
-
 <div
   class="container-home"
   [ngClass]="{
     show: ispageLoad
   }"
 >
-  <app-aside> </app-aside>
+  <app-aside [animeList]="animeList"> </app-aside>
+
   <main>
     <div class="home-encabezado">
       <span class="home-title">Últimos episodios</span>
+
       <span class="badge-type type-anime">HOY</span>
     </div>
 
-    <app-animes (loaded)="animesLoaded($event)"></app-animes>
+    <app-animes [animeList]="animeList"></app-animes>
   </main>
 </div>
-<app-footer [ispageLoad]="ispageLoad" ></app-footer>
+<app-footer [ispageLoad]="ispageLoad"></app-footer>
 
 <div
   class="container-spinners"

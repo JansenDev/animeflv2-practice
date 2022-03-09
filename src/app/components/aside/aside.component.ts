@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { faPlay, faPlayCircle } from '@fortawesome/free-solid-svg-icons';
 import { Anime } from 'src/app/model/anime.model';
-import { AnimeService } from '../../service/anime.service';
 import { Format } from '../../model/enum/format';
 
 @Component({
@@ -10,20 +9,14 @@ import { Format } from '../../model/enum/format';
   styleUrls: ['./aside.component.scss'],
 })
 export class AsideComponent implements OnInit {
-  constructor(private animeService: AnimeService) {}
+  constructor() {}
 
-  ngOnInit(): void {
-    this.getAnimesReleased();
-  }
+  ngOnInit(): void {}
+
   faPlayCircle = faPlayCircle;
   faPlay = faPlay;
 
+  @Input()
   animeList: Anime[] = [] as Anime[];
   format: any = Format;
-
-  getAnimesReleased() {
-    this.animeService.getAnimesReleased().subscribe((animesArray) => {
-      this.animeList = animesArray;
-    });
-  }
 }

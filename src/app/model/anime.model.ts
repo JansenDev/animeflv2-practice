@@ -17,7 +17,7 @@ interface Anime {
   format: Format;
 }
 
-interface AnimeAPIResponse {
+interface AnimesAPIResponse {
   status_code: number;
   message: string;
   data: {
@@ -29,4 +29,13 @@ interface AnimeAPIResponse {
   version: string;
 }
 
-export { Anime, AnimeAPIResponse };
+interface AnimeApiResponse
+  extends Pick<AnimesAPIResponse, 'status_code' | 'message' | 'version'> {
+  data: Anime;
+}
+
+interface AnimeAPINewsResponse extends Omit<AnimesAPIResponse, 'data'> {
+  data: Anime[];
+}
+
+export { Anime, AnimesAPIResponse, AnimeApiResponse, AnimeAPINewsResponse };

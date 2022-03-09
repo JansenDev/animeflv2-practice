@@ -19,7 +19,14 @@
                 format[anime.format] == 'ANIMETV',
               'type-movie': format[anime.format] == 'MOVIE',
               'type-ova':
-                format[anime.format] == 'OVA' || format[anime.format] == 'ONA'
+                format[anime.format] == 'OVA' || format[anime.format] == 'ONA',
+              'type-other':
+                !(format[anime.format] == 'ANIME') &&
+                !(format[anime.format] == 'ANIMETV') &&
+                !(format[anime.format] == 'ANIMETV') &&
+                !(format[anime.format] == 'MOVIE') &&
+                !(format[anime.format] == 'OVA') &&
+                !(format[anime.format] == 'ONA')
             }"
           >
             {{ format[anime.format] | outputName }}
