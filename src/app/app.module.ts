@@ -19,9 +19,10 @@ import { TokenInterceptor } from "./interceptor/token.interceptor";
 import { NotFoundComponent } from './page/not-found/not-found.component';
 import { VerComponent } from './page/ver/ver.component';
 import { UrlSafePipe } from './pipe/url-safe.pipe';
+import { BrowseComponent } from './page/browse/browse.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, HeaderComponent, AnimeComponent, AsideComponent, AnimesComponent, SpinnerComponent, FooterComponent, OutputNamePipe, NotFoundComponent, VerComponent, UrlSafePipe],
+  declarations: [AppComponent, HomeComponent, HeaderComponent, AnimeComponent, AsideComponent, AnimesComponent, SpinnerComponent, FooterComponent, OutputNamePipe, NotFoundComponent, VerComponent, UrlSafePipe, BrowseComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

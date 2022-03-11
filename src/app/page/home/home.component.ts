@@ -24,7 +24,8 @@ export class HomeComponent implements OnInit {
   }
 
   getAnimesReleased() {
-    let cache_storage: [] = localStorage[CACHE_KEY]
+    const cache_storage: [] =
+      localStorage[CACHE_KEY]
       ? JSON.parse(localStorage[CACHE_KEY])
       : [];
 
@@ -33,11 +34,30 @@ export class HomeComponent implements OnInit {
       this.ispageLoad = true;
     }
 
-    return this.animeService.getAnimesReleased().subscribe((animes) => {
-      console.log(animes);
-      this.animeList = animes;
-      this.ispageLoad = true;
-      localStorage[CACHE_KEY] = JSON.stringify(animes);
+    return this.animeService.getAnimesReleased().subscribe({
+      next: this.nextAnime.bind(this),
+
+      error: (error) => this.hanlderError(error),
+
+      complete: this.handlerComplete.bind(this),
     });
+  }
+
+  // ^METODOS
+  nextAnime(animes: Anime[]) {
+    console.log(animes);
+    // console.log(this);
+
+    this.animeList = animes;
+
+    localStorage[CACHE_KEY] = JSON.stringify(animes);
+  }
+
+  hanlderError(error: any) {
+    console.table('Error: %s', error.message);
+  }
+
+  handlerComplete() {
+    this.ispageLoad = true;
   }
 }

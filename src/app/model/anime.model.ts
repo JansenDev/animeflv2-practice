@@ -1,5 +1,14 @@
 import { Format } from './enum/format';
 
+interface APIResponse {
+  status_code: number;
+  data: any;
+  message: string;
+  version: string;
+}
+
+interface BaseAPIResponse extends Omit<APIResponse, 'data'> {}
+
 interface Anime {
   id: number;
   titles: {
@@ -17,25 +26,33 @@ interface Anime {
   format: Format;
 }
 
-interface AnimesAPIResponse {
-  status_code: number;
-  message: string;
+interface AnimesAPIResponse extends BaseAPIResponse {
   data: {
     current_page: number;
     count: number;
     last_page: number;
     documents: Anime[];
   };
-  version: string;
 }
 
-interface AnimeApiResponse
-  extends Pick<AnimesAPIResponse, 'status_code' | 'message' | 'version'> {
+interface AnimeAPIResponse extends BaseAPIResponse {
   data: Anime;
 }
 
-interface AnimeAPINewsResponse extends Omit<AnimesAPIResponse, 'data'> {
+interface AnimeAPINewsResponse extends BaseAPIResponse {
   data: Anime[];
 }
 
-export { Anime, AnimesAPIResponse, AnimeApiResponse, AnimeAPINewsResponse };
+interface GenresAPIResponse extends BaseAPIResponse {
+  data:{
+    genres: string[];
+  }
+}
+
+export {
+  Anime,
+  AnimesAPIResponse,
+  AnimeAPIResponse,
+  AnimeAPINewsResponse,
+  GenresAPIResponse,
+};

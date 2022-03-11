@@ -1,0 +1,90 @@
+<div class="browse">
+  <div class="browse__head">
+    <div class="browse__head__icon">
+      <fa-icon class="icon--faStar" [icon]="faStar"> </fa-icon>
+    </div>
+    <h1>Lista completa de Animes</h1>
+  </div>
+
+  <form>
+    <div class="browser__filters">
+      <div class="filter__genrer">
+        <button
+          type="button"
+          class="genrer__button"
+          (click)="showFilterPopUp('genres')"
+        >
+          <span>
+            <b>Genero:</b>
+            Todos
+          </span>
+          <b> </b>
+        </button>
+
+        <ul
+          class="genres__list"
+          [ngClass]="{
+            showg: showFilter == 'genres'
+          }"
+        >
+          <li *ngFor="let genre of genresList">
+            <label [for]="genre">
+              <input [id]="genre" type="checkbox" multiple />
+              <span>{{ genre }}</span>
+            </label>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <button
+          class="year__button"
+          (click)="showFilterPopUp('years')"
+          type="button"
+        >
+          <span>
+            <b>Año:</b>
+            Todos
+          </span>
+          <b> </b>
+        </button>
+      </div>
+
+      <div>
+        <button
+          type="button"
+          class="type__button"
+          (click)="showFilterPopUp('types')"
+          type="button"
+        >
+          <span>
+            <b>Tipo:</b>
+            Todos
+          </span>
+          <b> </b>
+        </button>
+      </div>
+
+      <div>
+        <button
+          type="button"
+          class="state__button"
+          (click)="showFilterPopUp('state')"
+        >
+          <span>
+            <b>Estado:</b>
+            Todos
+          </span>
+          <b>
+            <!-- <fa-icon [icon]="faCaretDown"></fa-icon> -->
+          </b>
+        </button>
+      </div>
+
+      <button class="filter_button" type="button">
+        <fa-icon [icon]="faFilter"></fa-icon>
+        Filtrar
+      </button>
+    </div>
+  </form>
+</div>

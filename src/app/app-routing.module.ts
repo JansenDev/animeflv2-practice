@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { VerComponent } from './page/ver/ver.component';
 import { HomeComponent } from './page/home/home.component';
 import { NotFoundComponent } from './page/not-found/not-found.component';
+import { BrowseComponent } from './page/browse/browse.component';
 
 const routes: Routes = [
   {
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path:'ver/:id_anime/:episodeCount',
     component:VerComponent
+  },
+  {
+    path:'browse',
+    component:BrowseComponent
   },
   {
     path:'**',

@@ -1,0 +1,221 @@
+$width_header: 1140px;
+
+.browse {
+  position: relative;
+  margin-top: 100px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+.browse__head {
+  width: $width_header;
+  height: 40px;
+  margin: 0 auto 20px;
+  position: relative;
+
+  &__icon {
+    display: inline-block;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin: 0 10px 0 0;
+    text-align: center;
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+  }
+
+  h1 {
+    display: inline-block;
+    margin: 0;
+    padding: 0 0 0 50px;
+    color: #bfb9b1;
+    font-size: 25px;
+    font-weight: normal;
+  }
+}
+
+.icon--faStar {
+  color: #cc7d00;
+  line-height: 40px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #ff8700;
+    border-radius: 50%;
+    z-index: -10;
+    left: 0;
+    top: 0;
+  }
+
+  &::after {
+    content: "";
+    width: 30px;
+    height: 20px;
+    position: absolute;
+    left: 5px;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 30px;
+    z-index: -5;
+  }
+}
+.resetBtns {
+  margin: 0;
+  box-shadow: none;
+  border-style: none;
+}
+.filter_button {
+  @extend .resetBtns;
+  padding: 7px 15px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.browser__filters {
+  width: $width_header;
+  margin: 0 auto;
+
+  & > div {
+    display: inline-block;
+    margin-right: 10px;
+
+    & button {
+      @extend .resetBtns;
+      @extend .filter_button;
+      background-color: #181a1b;
+      color: #c8c3bc;
+
+      & span {
+        padding-right: 4px;
+      }
+
+      & span b {
+        opacity: 0.6;
+        font-weight: 400;
+        font-size: 12px;
+      }
+
+      & > b::after {
+        font-family: FontAwesome;
+        content: "\f078";
+        color: #00bcf2;
+        font-size: 12px;
+        display: inline-block;
+        margin-top: -1px;
+        margin-left: 3px;
+        font-weight: 400;
+      }
+    }
+  }
+
+  & .filter__genrer {
+    position: relative;
+
+    & .genres__list {
+      // !display toggle "grid"
+      padding: 0;
+      margin: 0;
+      display: none;
+      grid-template-columns: repeat(4, 1fr);
+      width: 600px;
+      background-color: #181a1b;
+      padding: 15px;
+      border-radius: 5px;
+
+      position: absolute;
+      top: 40px;
+      animation: zoomMin 0.5s both;
+
+      & li {
+        list-style: none;
+        box-sizing: border-box;
+        height: 30px;
+      width: 150px;
+      }
+
+      &::before {
+        content: "";
+        top: -5px;
+        left: 15px;
+        border-bottom: 5px solid #181a1b;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        position: absolute;
+      }
+    }
+
+    & .genres__list li label {
+      position: relative;
+      box-sizing: border-box;
+      cursor: pointer;
+    }
+
+    & .genres__list li label span {
+      font-size: 12px;
+      font-weight: 400;
+      transition: 0.5s color;
+      font-weight: 500;
+      display: inline-block;
+      padding: 8px 0 8px 17px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      color: #c8c3bc;
+      box-sizing: border-box;
+      width: 150px;
+    }
+
+    & .genres__list li label input[type="checkbox" i] {
+      appearance: none;
+      background-color: #323333;
+      margin: 0;
+      font: inherit;
+      width: 11px;
+      height: 11px;
+      line-height: 10px;
+      border: none;
+      margin-right: 5px;
+      transition: all 0.5s;
+      position: absolute;
+      top: -5px;
+      left: 0;
+      cursor: pointer;
+
+      &::before {
+        content: "\f0c8";
+        font-family: FontAwesome;
+        font-size: 14px;
+      }
+
+      &:checked::before {
+        content: "\f14a";
+        font-weight: 500;
+        width: 15px;
+        height: 15px;
+        font-size: 14px;
+      }
+
+      &:checked {
+        background-color: #00bcf2;
+      }
+
+      &:checked + span {
+        color: #00bcf2;
+      }
+    }
+  }
+}
+
+@keyframes zoomMin {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50%{
+    opacity: 1;
+  }
+}
