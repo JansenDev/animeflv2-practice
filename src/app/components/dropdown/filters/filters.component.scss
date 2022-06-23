@@ -1,0 +1,66 @@
+li {
+  list-style: none;
+  box-sizing: border-box;
+  height: 30px;
+  width: 150px;
+}
+
+li label {
+  position: relative;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+li label span {
+  font-size: 12px;
+  font-weight: 400;
+  transition: 0.5s color;
+  font-weight: 500;
+  display: inline-block;
+  padding: 8px 0 8px 17px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: #c8c3bc;
+  box-sizing: border-box;
+  width: 150px;
+}
+
+li label input[type="checkbox" i] {
+  appearance: none;
+  background-color: #323333;
+  margin: 0;
+  font: inherit;
+  width: 11px;
+  height: 11px;
+  line-height: 10px;
+  border: none;
+  margin-right: 5px;
+  transition: all 0.5s;
+  position: absolute;
+  top: -5px;
+  left: 0;
+  cursor: pointer;
+
+  &::before {
+    content: "\f0c8";
+    font-family: FontAwesome;
+    font-size: 14px;
+  }
+
+  &:checked::before {
+    content: "\f14a";
+    font-weight: 500;
+    width: 15px;
+    height: 15px;
+    font-size: 14px;
+  }
+
+  &:checked {
+    background-color: #00bcf2;
+  }
+
+  &:checked + span {
+    color: #00bcf2;
+  }
+}

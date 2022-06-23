@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,23 +16,44 @@ import { AnimesComponent } from './components/animes/animes.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { OutputNamePipe } from './pipe/output-name.pipe';
-import { TokenInterceptor } from "./interceptor/token.interceptor";
+import { TokenInterceptor } from './interceptor/token.interceptor';
 import { NotFoundComponent } from './page/not-found/not-found.component';
 import { VerComponent } from './page/ver/ver.component';
 import { UrlSafePipe } from './pipe/url-safe.pipe';
 import { BrowseComponent } from './page/browse/browse.component';
+import { FiltersComponent } from './components/dropdown/filters/filters.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, HeaderComponent, AnimeComponent, AsideComponent, AnimesComponent, SpinnerComponent, FooterComponent, OutputNamePipe, NotFoundComponent, VerComponent, UrlSafePipe, BrowseComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    HeaderComponent,
+    AnimeComponent,
+    AsideComponent,
+    AnimesComponent,
+    SpinnerComponent,
+    FooterComponent,
+    OutputNamePipe,
+    NotFoundComponent,
+    VerComponent,
+    UrlSafePipe,
+    BrowseComponent,
+    FiltersComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FontAwesomeModule,
+    ReactiveFormsModule,
   ],
-  providers: [{
-    provide:HTTP_INTERCEPTORS, useClass:TokenInterceptor, multi:true
-  }],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

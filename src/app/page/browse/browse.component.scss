@@ -62,11 +62,13 @@ $width_header: 1140px;
     z-index: -5;
   }
 }
+
 .resetBtns {
   margin: 0;
   box-shadow: none;
   border-style: none;
 }
+
 .filter_button {
   @extend .resetBtns;
   padding: 7px 15px;

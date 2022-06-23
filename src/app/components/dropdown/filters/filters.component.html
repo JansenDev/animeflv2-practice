@@ -1,0 +1,26 @@
+<div [formGroup]="form">
+  <li *ngFor="let genre of filterControls; let i = index">
+    <label [for]="genre">
+      <input [id]="genre" type="checkbox" multiple />
+      <span>{{ genre }}</span>
+    </label>
+  </li>
+  <input formControlName="tester" type="text" />
+</div>
+
+{{ form.value | json }}
+
+<!-- <li
+  formArrayName="{{ nameFormArray }}"
+  *ngFor="let genre of filterControls; let i = index"
+>
+  <label [for]="filterList[i]">
+    <input
+      [formControlName]="i"
+      [id]="filterList[i]"
+      type="checkbox"
+      multiple
+    />
+    <span>{{ filterList[i] }}</span>
+  </label>
+</li> -->

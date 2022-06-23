@@ -6,7 +6,7 @@
     <h1>Lista completa de Animes</h1>
   </div>
 
-  <form>
+  <form [formGroup]="formBrowser" (ngSubmit)="onSubmit()">
     <div class="browser__filters">
       <div class="filter__genrer">
         <button
@@ -21,19 +21,32 @@
           <b> </b>
         </button>
 
-        <ul
-          class="genres__list"
-          [ngClass]="{
-            showg: showFilter == 'genres'
-          }"
-        >
-          <li *ngFor="let genre of genresList">
-            <label [for]="genre">
-              <input [id]="genre" type="checkbox" multiple />
-              <span>{{ genre }}</span>
+        <!-- <ul> -->
+          <app-filters
+            class="genres__list"
+            formControlName="genresCheckboxArray"
+            [filterList]="genresList"
+            [filterControls]="genresList"
+            [ngClass]="{
+              showg: showFilter == 'genres'
+            }"
+          ></app-filters>
+
+          <!-- <li
+            formArrayName="genresCheckboxArray"
+            *ngFor="let genre of ordersFromArray.controls; let i = index"
+          >
+            <label [for]="genresList[i]">
+              <input
+                [formControlName]="i"
+                [id]="genresList[i]"
+                type="checkbox"
+                multiple
+              />
+              <span>{{ genresList[i] }}</span>
             </label>
-          </li>
-        </ul>
+          </li> -->
+        <!-- </ul> -->
       </div>
 
       <div>
@@ -81,10 +94,14 @@
         </button>
       </div>
 
-      <button class="filter_button" type="button">
+      <button class="filter_button" type="submit">
         <fa-icon [icon]="faFilter"></fa-icon>
         Filtrar
       </button>
     </div>
+
+    Valido: {{ formBrowser.valid }}
+    <br>
+    children: {{ formBrowser.value|json }}
   </form>
 </div>

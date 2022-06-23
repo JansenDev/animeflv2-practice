@@ -57,7 +57,7 @@ body {
     background-color: #222526;
   }
   &.type-news {
-    background-color: #FFC107;
+    background-color: #ffc107;
   }
 }
 
@@ -115,4 +115,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.resetBtns {
+  margin: 0;
+  box-shadow: none;
+  border-style: none;
 }
